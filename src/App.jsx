@@ -3,48 +3,48 @@ import './App.css';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
-  const [validationMessage, setValidationMessage] = useState(''); // Para armazenar a mensagem de validação
+  const [validationMessage, setValidationMessage] = useState(''); // To store the validation message
 
-  // Função que atualiza o valor do input no estado
+  // Function to update the input value in state
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  // Função chamada quando o botão for clicado
+  // Function called when the button is clicked
   const handleValidation = () => {
-    // Divide o valor do input em partes com base no hífen
+    // Split the input value into parts based on the hyphen
     const parts = inputValue.split('-');
     let message = '';
 
-    // Verifica se o número de partes está correto
+    // Check if the number of parts is correct
     if (parts.length !== 4) {
-      message = 'A sequência deve ter 4 partes.';
+      message = 'The sequence must have 4 parts.';
     } else {
-      // Valida cada parte individualmente
+      // Validate each part individually
       if (!/^[A-Za-z0-9]{3}$/.test(parts[0])) {
-        message += 'A primeira parte deve ter 3 caracteres. ';
+        message += 'The first part must have 3 characters. ';
       }
       if (!/^[A-Za-z0-9]{4}$/.test(parts[1])) {
-        message += 'A segunda parte deve ter 4 caracteres. ';
+        message += 'The second part must have 4 characters. ';
       }
       if (!/^[A-Za-z0-9]{4}$/.test(parts[2])) {
-        message += 'A terceira parte deve ter 4 caracteres. ';
+        message += 'The third part must have 4 characters. ';
       }
       if (!/^[A-Za-z0-9]{4}$/.test(parts[3])) {
-        message += 'A quarta parte deve ter 4 caracteres. ';
+        message += 'The fourth part must have 4 characters. ';
       }
     }
 
-    // Atualiza a mensagem de validação
-    setValidationMessage(message || 'A sequência é válida!');
+    // Update the validation message
+    setValidationMessage(message || 'The sequence is valid!');
   };
 
   return (
     <div className='container'>
-    <div className="sequencia">
-      <p>ABC-1234-5678-9101</p>
-      <p>Sequencia deve conter no primeiro bloco 3 caracteres, segundo, terceiro e quarto bloco 4 caracteres</p>
-    </div>
+      <div className="sequence">
+        <p>ABC-1234-5678-9101</p>
+        <p>The sequence must contain 3 characters in the first block, and 4 characters in the second, third, and fourth blocks.</p>
+      </div>
       <form action="" method="get">
         <label htmlFor="inputField">Insert</label>
         <input
@@ -54,16 +54,16 @@ function App() {
           onChange={handleInputChange}
           placeholder="Ex: ABC-1234-5678-9101"
         />
-        {/* Botão para validar a sequência */}
+        {/* Button to validate the sequence */}
         <button type="button" onClick={handleValidation}>
-          Validar sequência
+          Validate sequence
         </button>
       </form>
 
-      {/* Exibindo o valor digitado */}
-      <p>Você digitou: {inputValue}</p>
+      {/* Displaying the entered value */}
+      <p>You entered: {inputValue}</p>
 
-      {/* Mensagem de validação */}
+      {/* Validation message */}
       {validationMessage && <p style={{ color: 'red' }}>{validationMessage}</p>}
     </div>
   );
