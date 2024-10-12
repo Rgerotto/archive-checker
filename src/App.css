@@ -13,7 +13,7 @@ body{
 }
 .container{
     padding: 4rem;
-    background-color: aqua;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,4 +29,8 @@ form{
 button, input{
     padding: .5rem 1rem ;
     margin-left: 1rem;
+}
+button{
+    background-color: black;
+    color: white;
 }
