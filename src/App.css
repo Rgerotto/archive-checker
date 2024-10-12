@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(160, 160, 160);
+}
+.container{
+    padding: 4rem;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sequencia{
+    text-align: center;
+    padding: 2rem 0;
+}
+form{
+    margin: 2rem 0;
+}
+button, input{
+    padding: .5rem 1rem ;
+    margin-left: 1rem;
+}
